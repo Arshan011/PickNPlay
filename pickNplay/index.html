@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PickNPlay</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Smooth Scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="PickNPlay Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="consoles.html">Consoles</a></li>
+        <li><a href="shop.html">Merchandise</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Rent. Play. Repeat.</h1>
+    <p>Your favorite consoles, games, and books — delivered fast!</p>
+    <a href="consoles.html" class="btn">Explore Consoles</a>
+  </section>
+
+  <!-- Consoles Section -->
+  <section class="section consoles">
+    <h2>Rent PlayStations</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="assets/images/ps5.jpg" alt="PS5">
+        <h3>PlayStation 5</h3>
+        <p>Rent for ₹699/day</p>
+        <a href="#" class="btn">Rent Now</a>
+      </div>
+      <div class="card">
+        <img src="assets/images/xbox.jpg" alt="PS4">
+        <h3>PlayStation 4</h3>
+        <p>Rent for ₹599/day</p>
+        <a href="#" class="btn">Rent Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merchandise Section -->
+  <section class="section merch">
+    <h2>Shop Cool Merchandise</h2>
+    <p>T-Shirts, Keychains, Stickers, Action Figures & more!</p>
+    <a href="shop.html" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Books Section -->
+<section class="section books">
+    <h2>Rent or Exchange Books</h2>
+    <p>Buy, rent, or exchange novels and comics with ease.</p>
+    <a href="books.html" class="btn">Browse Books</a>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 PickNPlay. All rights reserved.</p>
+  </footer>
+
+  <!-- Preloader Script -->
+  <script>
+    window.addEventListener('load', function() {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #f5f5f5;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+  }
+  
+  .logo img {
+    width: 150px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  nav a:hover {
+    color: #00ffff;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f3eeee;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  /* Add a dark overlay */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  /* Make sure the text stays above the overlay */
+  .hero h1,
+  .hero p,
+  .hero a {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hero Text Hover Effect */
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .hero h1:hover {
+    text-shadow: 0 0 15px rgb(43, 226, 217), 0 0 30px rgb(227, 109, 196), 0 0 60px rgba(218, 13, 198, 0.959); /* Glowing effect */
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00ffff;
+    color: #0d0d0d;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .hero .btn:hover {
+    background: #00cccc;
+  }
+  
+  /* Consoles Section */
+  .section.consoles {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .section.consoles h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ffff;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card img {
+    width: 100%;
+    height: 200px; /* You can adjust slightly if you want taller cards */
+    object-fit: cover; /* This makes sure the image fills the area without distortion */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 1rem 0;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .card .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00ffff;
+    color: #0d0d0d;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-bottom: 1rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .card .btn:hover {
+    background: #00cccc;
+  }
+  
+  /* Merchandise Section */
+  /* Merchandise Section */
+.section.merch {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .section.merch h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ffff;
+  }
+  
+  .section.merch p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+  }
+  
+  .section.merch .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00ffff;
+    color: #0d0d0d;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 1.5rem;
+  }
+  
+  .section.merch .btn:hover {
+    background: #00cccc;
+  }
+  
+  /* Books Section */
+.section.books {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .section.books h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ffff;
+  }
+  
+  .section.books p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+  }
+  
+  .section.books .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00ffff;
+    color: #0d0d0d;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 1.5rem;
+  }
+  
+  .section.books .btn:hover {
+    background: #00cccc;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Preloader */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 4px solid #f5f5f5;
+    border-top: 4px solid #00ffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+     
+  
