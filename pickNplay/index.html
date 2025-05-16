@@ -24,18 +24,46 @@
   <header class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="assets/images/logo.png" alt="PickNPlay Logo">
+        <img src="logo.png" alt="PickNPlay Logo">
       </a>
+    </div>
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="consoles.html">Consoles</a></li>
+        <li><a href="index.html">Rent</a></li>
+        <li><a href="consoles.html">List Now</a></li>
         <li><a href="shop.html">Merchandise</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
+      <a href="login.html" class="icon-btn login-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+    </div>
   </header>
 
   <!-- Hero Section -->
