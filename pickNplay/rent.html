@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rent Consoles | PickNPlay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+ <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="PickNPlay Logo">
+      </a>
+    </div>
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="rent.html">Rent</a></li>
+        <li><a href="consoles.html">List Now</a></li>
+        <li><a href="shop.html">Merchandise</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
+      <a href="login.html" class="icon-btn login-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Consoles Section -->
+  <section class="section consoles">
+    <h2>Available Consoles for Rent</h2>
+    <div class="consoles-grid">
+      <!-- PlayStation 5 Section -->
+      <div class="console-section">
+        <div class="console-details">
+          <div class="console-image">
+            <img src="assets/images/ps5.jpg" alt="PlayStation 5">
+          </div>
+          <div class="console-info">
+            <h3>PlayStation 5</h3>
+            <ul class="features">
+              <li>4K Gaming Experience</li>
+              <li>DualSense Controller</li>
+              <li>Latest Gaming Titles</li>
+              <li>2 Controllers Included</li>
+            </ul>
+            <div class="pricing">
+              <p class="price">₹699/day</p>
+              <p class="deposit">Refundable Deposit: ₹2000</p>
+            </div>
+          </div>
+        </div>
+        <div class="booking-section">
+          <div class="date-picker">
+            <h4>Select Rental Dates</h4>
+            <input type="text" class="date-range" placeholder="Select dates">
+          </div>
+          <div class="booking-summary">
+            <h4>Booking Summary</h4>
+            <div class="summary-details">
+              <p>Duration: <span class="duration">0 days</span></p>
+              <p>Daily Rate: <span class="daily-rate">₹699</span></p>
+              <p>Subtotal: <span class="subtotal">₹0</span></p>
+              <p>Deposit: <span class="deposit">₹2000</span></p>
+              <p class="total">Total: <span class="total-amount">₹2000</span></p>
+            </div>
+            <button class="btn book-now">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PlayStation 4 Section -->
+      <div class="console-section">
+        <div class="console-details">
+          <div class="console-image">
+            <img src="assets/images/ps4.jpg" alt="PlayStation 4">
+          </div>
+          <div class="console-info">
+            <h3>PlayStation 4</h3>
+            <ul class="features">
+              <li>1080p Gaming</li>
+              <li>DualShock 4 Controller</li>
+              <li>Huge Game Library</li>
+              <li>2 Controllers Included</li>
+            </ul>
+            <div class="pricing">
+              <p class="price">₹599/day</p>
+              <p class="deposit">Refundable Deposit: ₹1500</p>
+            </div>
+          </div>
+        </div>
+        <div class="booking-section">
+          <div class="date-picker">
+            <h4>Select Rental Dates</h4>
+            <input type="text" class="date-range" placeholder="Select dates">
+          </div>
+          <div class="booking-summary">
+            <h4>Booking Summary</h4>
+            <div class="summary-details">
+              <p>Duration: <span class="duration">0 days</span></p>
+              <p>Daily Rate: <span class="daily-rate">₹599</span></p>
+              <p>Subtotal: <span class="subtotal">₹0</span></p>
+              <p>Deposit: <span class="deposit">₹1500</span></p>
+              <p class="total">Total: <span class="total-amount">₹1500</span></p>
+            </div>
+            <button class="btn book-now">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Xbox Series X Section -->
+      <div class="console-section">
+        <div class="console-details">
+          <div class="console-image">
+            <img src="assets/images/xbox.jpg" alt="Xbox Series X">
+          </div>
+          <div class="console-info">
+            <h3>Xbox Series X</h3>
+            <ul class="features">
+              <li>4K Gaming Experience</li>
+              <li>Xbox Wireless Controller</li>
+              <li>Game Pass Compatible</li>
+              <li>2 Controllers Included</li>
+            </ul>
+            <div class="pricing">
+              <p class="price">₹649/day</p>
+              <p class="deposit">Refundable Deposit: ₹2000</p>
+            </div>
+          </div>
+        </div>
+        <div class="booking-section">
+          <div class="date-picker">
+            <h4>Select Rental Dates</h4>
+            <input type="text" class="date-range" placeholder="Select dates">
+          </div>
+          <div class="booking-summary">
+            <h4>Booking Summary</h4>
+            <div class="summary-details">
+              <p>Duration: <span class="duration">0 days</span></p>
+              <p>Daily Rate: <span class="daily-rate">₹649</span></p>
+              <p>Subtotal: <span class="subtotal">₹0</span></p>
+              <p>Deposit: <span class="deposit">₹2000</span></p>
+              <p class="total">Total: <span class="total-amount">₹2000</span></p>
+            </div>
+            <button class="btn book-now">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nintendo Switch Section -->
+      <div class="console-section">
+        <div class="console-details">
+          <div class="console-image">
+            <img src="assets/images/switch.jpg" alt="Nintendo Switch">
+          </div>
+          <div class="console-info">
+            <h3>Nintendo Switch</h3>
+            <ul class="features">
+              <li>Portable Gaming</li>
+              <li>2 Joy-Con Controllers</li>
+              <li>Dock Included</li>
+              <li>Family Friendly Games</li>
+            </ul>
+            <div class="pricing">
+              <p class="price">₹549/day</p>
+              <p class="deposit">Refundable Deposit: ₹1500</p>
+            </div>
+          </div>
+        </div>
+        <div class="booking-section">
+          <div class="date-picker">
+            <h4>Select Rental Dates</h4>
+            <input type="text" class="date-range" placeholder="Select dates">
+          </div>
+          <div class="booking-summary">
+            <h4>Booking Summary</h4>
+            <div class="summary-details">
+              <p>Duration: <span class="duration">0 days</span></p>
+              <p>Daily Rate: <span class="daily-rate">₹549</span></p>
+              <p>Subtotal: <span class="subtotal">₹0</span></p>
+              <p>Deposit: <span class="deposit">₹1500</span></p>
+              <p class="total">Total: <span class="total-amount">₹1500</span></p>
+            </div>
+            <button class="btn book-now">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="section games-section">
+    <h2>Popular Games for Rent</h2>
+    
+    <!-- Category Filter -->
+    <div class="games-filter">
+      <button class="filter-btn active" data-category="all">All Games</button>
+      <button class="filter-btn" data-category="ps5">PS5</button>
+      <button class="filter-btn" data-category="ps4">PS4</button>
+      <button class="filter-btn" data-category="xbox">Xbox</button>
+      <button class="filter-btn" data-category="switch">Nintendo Switch</button>
+      <button class="filter-btn" data-category="action">Action</button>
+      <button class="filter-btn" data-category="rpg">RPG</button>
+      <button class="filter-btn" data-category="sports">Sports</button>
+      <button class="filter-btn" data-category="fighting">Fighting</button>
+      <button class="filter-btn" data-category="horror">Horror</button>
+      <button class="filter-btn" data-category="racing">Racing</button>
+      <button class="filter-btn" data-category="fps">FPS</button>
+      <button class="filter-btn" data-category="platform">Platform</button>
+    </div>
+
+    <!-- Games Container with Navigation -->
+    <div class="games-container">
+      <!-- Navigation Buttons -->
+      <button class="slider-nav prev-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      
+      <button class="slider-nav next-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+
+      <!-- Games Grid -->
+      <div class="games-grid">
+        <!-- Game 1 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/spiderman2.jpg" alt="Spider-Man 2">
+          </div>
+          <div class="game-info">
+            <span class="platform">PS5</span>
+            <h4>Marvel's Spider-Man 2</h4>
+            <p>Action-Adventure</p>
+            <p class="price">₹199/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 2 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/zelda.jpg" alt="Zelda: Tears of the Kingdom">
+          </div>
+          <div class="game-info">
+            <span class="platform">Switch</span>
+            <h4>Zelda: Tears of the Kingdom</h4>
+            <p>Action RPG</p>
+            <p class="price">₹179/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 3 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/fc24.jpg" alt="EA FC 24">
+          </div>
+          <div class="game-info">
+            <span class="platform">PS5/PS4/Xbox</span>
+            <h4>EA Sports FC 24</h4>
+            <p>Sports</p>
+            <p class="price">₹149/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 4 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/mk1.jpg" alt="Mortal Kombat 1">
+          </div>
+          <div class="game-info">
+            <span class="platform">PS5/Xbox</span>
+            <h4>Mortal Kombat 1</h4>
+            <p>Fighting</p>
+            <p class="price">₹169/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 5 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/mario.jpg" alt="Super Mario Wonder">
+          </div>
+          <div class="game-info">
+            <span class="platform">Switch</span>
+            <h4>Super Mario Wonder</h4>
+            <p>Platform</p>
+            <p class="price">₹159/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 6 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/starfield.jpg" alt="Starfield">
+          </div>
+          <div class="game-info">
+            <span class="platform">Xbox</span>
+            <h4>Starfield</h4>
+            <p>RPG</p>
+            <p class="price">₹189/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 7 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/re4.jpg" alt="Resident Evil 4">
+          </div>
+          <div class="game-info">
+            <span class="platform">PS5/Xbox</span>
+            <h4>Resident Evil 4</h4>
+            <p>Horror Action</p>
+            <p class="price">₹179/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Game 8 -->
+        <div class="game-card">
+          <div class="game-image">
+            <img src="assets/images/games/pokemon.jpg" alt="Pokémon Scarlet">
+          </div>
+          <div class="game-info">
+            <span class="platform">Switch</span>
+            <h4>Pokémon Scarlet</h4>
+            <p>RPG</p>
+            <p class="price">₹169/day</p>
+            <button class="rent-game-btn">Rent Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="slider-pagination"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 PickNPlay. All rights reserved.</p>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="booking-modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h3>Book Your Game</h3>
+      </div>
+      <div class="modal-body">
+        <div class="game-preview">
+          <img src="" alt="" id="modalGameImage">
+          <div class="game-info">
+            <h4 id="modalGameTitle"></h4>
+            <p id="modalGamePlatform"></p>
+            <p class="price" id="modalGamePrice"></p>
+          </div>
+        </div>
+        <div class="booking-form">
+          <div class="date-selection">
+            <label for="bookingDates">Select Rental Dates</label>
+            <input type="text" id="bookingDates" placeholder="Choose dates" class="date-picker-input">
+          </div>
+          <div class="booking-summary">
+            <h4>Booking Summary</h4>
+            <div class="summary-details">
+              <p>Duration: <span id="rentalDuration">0 days</span></p>
+              <p>Daily Rate: <span id="dailyRate">₹0</span></p>
+              <p>Subtotal: <span id="subtotal">₹0</span></p>
+              <p>Refundable Deposit: <span id="deposit">₹1000</span></p>
+              <p class="total">Total Amount: <span id="totalAmount">₹1000</span></p>
+            </div>
+          </div>
+          <button class="confirm-booking-btn">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import gamesData from './games-data.js';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const gamesContainer = document.querySelector('.games-container');
+      const gamesGrid = document.querySelector('.games-grid');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const pagination = document.querySelector('.slider-pagination');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      const gamesPerPage = 8;
+      let currentPage = 0;
+      let filteredGames = gamesData;
+
+      // Initialize pagination
+      function initPagination() {
+        const pageCount = Math.ceil(filteredGames.length / gamesPerPage);
+        pagination.innerHTML = '';
+        
+        for (let i = 0; i < pageCount; i++) {
+          const dot = document.createElement('div');
+          dot.className = `pagination-dot ${i === 0 ? 'active' : ''}`;
+          dot.addEventListener('click', () => goToPage(i));
+          pagination.appendChild(dot);
+        }
+      }
+
+      // Navigate to specific page
+      function goToPage(page) {
+        currentPage = page;
+        updateSlider();
+        updatePagination();
+      }
+
+      // Update slider position
+      function updateSlider() {
+        const offset = currentPage * -100;
+        gamesGrid.style.transform = `translateX(${offset}%)`;
+        loadGamesForCurrentPage();
+      }
+
+      // Update pagination dots
+      function updatePagination() {
+        const dots = document.querySelectorAll('.pagination-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentPage);
+        });
+      }
+
+      // Load games for current page
+      function loadGamesForCurrentPage() {
+        const start = currentPage * gamesPerPage;
+        const end = start + gamesPerPage;
+        const pageGames = filteredGames.slice(start, end);
+        
+        gamesGrid.innerHTML = pageGames.map(game => `
+          <div class="game-card" data-categories="${game.categories.join(' ')}">
+            <div class="game-image">
+              <img src="${game.image}" alt="${game.title}">
+            </div>
+            <div class="game-info">
+              <span class="platform">${game.platform}</span>
+              <h4>${game.title}</h4>
+              <p>${game.genre}</p>
+              <p class="price">₹${game.price}/day</p>
+              <button class="rent-game-btn">Rent Now</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Filter games by category
+      function filterGames(category) {
+        filteredGames = category === 'all' 
+          ? gamesData 
+          : gamesData.filter(game => game.categories.includes(category));
+        
+        currentPage = 0;
+        initPagination();
+        updateSlider();
+      }
+
+      // Event Listeners
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 0) {
+          goToPage(currentPage - 1);
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const maxPage = Math.ceil(filteredGames.length / gamesPerPage) - 1;
+        if (currentPage < maxPage) {
+          goToPage(currentPage + 1);
+        }
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filterGames(btn.dataset.category);
+        });
+      });
+
+      // Initialize
+      filterGames('all');
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Common flatpickr config
+      const commonConfig = {
+        mode: "range",
+        minDate: "today",
+        dateFormat: "d M Y",
+        altFormat: "d M Y",
+        altInput: true,
+        monthSelectorType: "static",
+        showMonths: 1,
+        enableTime: false,
+        altInputClass: "date-range",
+        showDaysInNextAndPreviousMonths: false,
+        hideExtraDays: true,
+        locale: {
+          firstDayOfWeek: 0,
+          months: {
+            shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            longhand: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+          },
+          weekdays: {
+            shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+          }
+        },
+          theme: "dark",
+  clickOpens: true,
+  disableMobile: true,
+  animate: true,
+  position: "below",
+  static: true,
+  inline: false,
+  showMonths: 1,
+  fixedHeight: false,
+  wrap: false
+      };
+
+      // Initialize all date pickers in console sections
+      const dateInputs = document.querySelectorAll('.date-range');
+      dateInputs.forEach(input => {
+        const config = {
+          ...commonConfig,
+          appendTo: input.parentElement,
+          onOpen: function(selectedDates, dateStr, instance) {
+            const consoleSection = instance.element.closest('.console-section');
+            const allConsoleSections = document.querySelectorAll('.console-section');
+            allConsoleSections.forEach(section => section.style.zIndex = 1);
+            consoleSection.style.zIndex = 2;
+            
+            setTimeout(() => {
+              instance.redraw();
+            }, 0);
+          },
+          onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length === 2) {
+              const summarySection = instance.element.closest('.console-section').querySelector('.booking-summary');
+              const duration = Math.ceil((selectedDates[1] - selectedDates[0]) / (1000 * 60 * 60 * 24));
+              const dailyRate = parseInt(summarySection.querySelector('.daily-rate').textContent.replace('₹', ''));
+              const deposit = parseInt(summarySection.querySelector('.deposit').textContent.replace('₹', ''));
+              const subtotal = duration * dailyRate;
+              const total = subtotal + deposit;
+
+              summarySection.querySelector('.duration').textContent = duration + ' days';
+              summarySection.querySelector('.subtotal').textContent = '₹' + subtotal;
+              summarySection.querySelector('.total-amount').textContent = '₹' + total;
+            }
+          }
+        };
+        flatpickr(input, config);
+      });
+
+      // Initialize modal date picker
+      const modalDatePicker = document.getElementById('bookingDates');
+      if (modalDatePicker) {
+        const modalConfig = {
+          ...commonConfig,
+          appendTo: modalDatePicker.parentElement,
+          onChange: function(selectedDates) {
+            if (selectedDates.length === 2) {
+              updateBookingSummary(selectedDates);
+            }
+          }
+        };
+        flatpickr(modalDatePicker, modalConfig);
+      }
+
+      // Initialize modal elements
+      const modal = document.getElementById('bookingModal');
+      const closeBtn = document.querySelector('.close-modal');
+      const gameCards = document.querySelectorAll('.game-card');
+      
+      // Update booking summary
+      function updateBookingSummary(dates) {
+        const duration = Math.ceil((dates[1] - dates[0]) / (1000 * 60 * 60 * 24));
+        const dailyRate = parseInt(document.getElementById('dailyRate').textContent.replace('₹', ''));
+        const deposit = parseInt(document.getElementById('deposit').textContent.replace('₹', ''));
+        const subtotal = duration * dailyRate;
+        const total = subtotal + deposit;
+
+        document.getElementById('rentalDuration').textContent = duration + ' days';
+        document.getElementById('subtotal').textContent = '₹' + subtotal;
+        document.getElementById('totalAmount').textContent = '₹' + total;
+      }
+
+      // Open modal when clicking Rent Now button
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('rent-game-btn')) {
+          const gameCard = e.target.closest('.game-card');
+          openBookingModal(gameCard);
+        }
+      });
+
+      // Open booking modal with game details
+      function openBookingModal(gameCard) {
+        const gameImage = gameCard.querySelector('.game-image img').src;
+        const gameTitle = gameCard.querySelector('h4').textContent;
+        const gamePlatform = gameCard.querySelector('.platform').textContent;
+        const gamePrice = gameCard.querySelector('.price').textContent;
+
+        document.getElementById('modalGameImage').src = gameImage;
+        document.getElementById('modalGameImage').alt = gameTitle;
+        document.getElementById('modalGameTitle').textContent = gameTitle;
+        document.getElementById('modalGamePlatform').textContent = gamePlatform;
+        document.getElementById('modalGamePrice').textContent = gamePrice;
+        document.getElementById('dailyRate').textContent = gamePrice;
+
+        modal.style.display = 'flex';
+        // Reset date picker
+        flatpickr(modalDatePicker, {
+          mode: "range",
+          minDate: "today",
+          dateFormat: "Y-m-d",
+          theme: "dark",
+          clickOpens: true,
+          disableMobile: true,
+          animate: true,
+          showMonths: 1,
+          onChange: function(selectedDates) {
+            if (selectedDates.length === 2) {
+              updateBookingSummary(selectedDates);
+            }
+          }
+        });
+      }
+
+      // Close modal
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      }
+
+      // Handle booking confirmation
+      document.querySelector('.confirm-booking-btn').addEventListener('click', function() {
+        const duration = document.getElementById('rentalDuration').textContent;
+        if (duration === '0 days') {
+          alert('Please select rental dates');
+          return;
+        }
+        // Add your booking logic here
+        alert('Booking confirmed! Thank you for renting with us.');
+        modal.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
