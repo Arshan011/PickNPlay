@@ -18,35 +18,194 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #1a1a1a;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(
+      to right,
+      rgba(26, 26, 26, 0.98),
+      rgba(32, 32, 32, 0.98),
+      rgba(26, 26, 26, 0.98)
+    );
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      0 2px 10px rgba(0, 255, 255, 0.1),
+      0 0 40px rgba(0, 255, 255, 0.03) inset;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    height: 5rem;
+  }
+  
+  .navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(
+        circle at top right,
+        rgba(0, 255, 255, 0.03),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 255, 255, 0.03),
+        transparent 40%
+      );
+    pointer-events: none;
   }
   
   .logo img {
-    width: 150px;
+    width: 100px;
+    height: 100px;
+    padding-top: 0.7rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo img:hover {
+    transform: scale(1.05);
+  }
+  
+  .search-container {
+    margin-left: auto;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #searchBar {
+    width: 40px;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(
+      145deg,
+      rgba(42, 42, 42, 0.9),
+      rgba(48, 48, 48, 0.9)
+    );
+    color: #fff;
+    transition: all 0.3s ease;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+  }
+  
+  .search-btn {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(
+      145deg,
+      rgba(42, 42, 42, 0.9),
+      rgba(48, 48, 48, 0.9)
+    );
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 255, 255, 0.1);
+  }
+  
+  .search-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .search-btn svg {
+    color: #00ffff;
+    transition: all 0.3s ease;
+  }
+  
+  .search-box:hover #searchBar,
+  .search-box:focus-within #searchBar {
+    width: 240px;
+    padding: 6px 40px 6px 15px;
+    opacity: 1;
+    background: linear-gradient(
+      145deg,
+      rgba(42, 42, 42, 0.9),
+      rgba(48, 48, 48, 0.9)
+    );
+    box-shadow: 
+      0 2px 10px rgba(0, 255, 255, 0.1),
+      0 0 20px rgba(0, 255, 255, 0.03) inset;
+  }
+  
+  .search-box:hover .search-btn,
+  .search-box:focus-within .search-btn {
+    background: linear-gradient(145deg, #00ffff, #00e6e6);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 2px 10px rgba(0, 255, 255, 0.2),
+      0 0 20px rgba(255, 255, 255, 0.1) inset;
+  }
+  
+  .search-box:hover .search-btn svg,
+  .search-box:focus-within .search-btn svg {
+    color: #2a2a2a;
+  }
+  
+  #searchBar::placeholder {
+    color: rgba(255, 255, 255, 0.6);
   }
   
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-right: 2rem;
   }
   
   nav a {
     color: #f5f5f5;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: linear-gradient(to right, #00ffff, #00e6e6);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   }
   
   nav a:hover {
     color: #00ffff;
   }
   
+  nav a:hover::after {
+    width: 70%;
+  }
+  
   /* Hero */
   .hero {
     position: relative;
     min-height: 90vh;
-    background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
+    background: url('hero-bg.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -274,11 +433,639 @@
     height: 50px;
     animation: spin 1s linear infinite;
   }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% }
-     
-  
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Nav Icons */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.5rem;
+}
+
+.icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(42, 42, 42, 0.9),
+    rgba(48, 48, 48, 0.9)
+  );
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icon-btn svg {
+  color: #00ffff;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background: linear-gradient(145deg, #00ffff, #00e6e6);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 2px 10px rgba(0, 255, 255, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.1) inset;
+}
+
+.icon-btn:hover svg {
+  color: #2a2a2a;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #00ffff;
+  color: #2a2a2a;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover .cart-count {
+  background: #2a2a2a;
+  color: #00ffff;
+  border-color: #00ffff;
+  transform: scale(1.1);
+}
+
+/* Console Sections Container */
+.consoles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.console-section {
+  background: rgba(26, 26, 26, 0.95);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.console-section:hover {
+  z-index: 2;
+}
+
+.console-details {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.console-image {
+  flex: 0 0 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 150px;
+}
+
+.console-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.console-image:hover img {
+  transform: scale(1.05);
+}
+
+.console-info {
+  flex: 1;
+}
+
+.console-info h3 {
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin-bottom: 0.8rem;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.features li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.pricing {
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.price {
+  font-size: 1.3rem;
+}
+
+.deposit {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Booking Section */
+.booking-section {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+.date-picker {
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+.date-picker h4, .booking-summary h4 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.date-range {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(42, 42, 42, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-range:hover {
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.date-range:focus {
+  border-color: #00ffff;
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.booking-summary {
+  flex: 1;
+  background: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(48, 48, 48, 0.9));
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.summary-details p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.summary-details .total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.book-now {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: linear-gradient(145deg, #00ffff, #00e6e6);
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+  background: linear-gradient(145deg, #00e6e6, #00cccc);
+}
+
+/* Calendar Styling */
+.flatpickr-calendar {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
+  width: 364px !important;
+  min-width: 364px !important;
+  max-width: 420px !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.flatpickr-days {
+  width: 100% !important;
+  min-width: 292px !important;
+  max-width: none !important;
+  display: block !important;
+  padding: 0 !important;
+}
+
+.dayContainer {
+  display: grid !important;
+  grid-template-columns: repeat(7, 52px) !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  padding: 0 !important;
+}
+
+.flatpickr-day {
+  width: 52px !important;
+  height: 42px !important;
+  line-height: 42px !important;
+  border-radius: 50% !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
+.flatpickr-weekdays {
+  width: 100% !important;
+  min-width: 292px !important;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  margin: 0 !important;
+  padding: 8px 0 !important;
+}
+
+.flatpickr-weekdaycontainer {
+  width: 100% !important;
+  min-width: 292px !important;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.flatpickr-months {
+  padding: 8px 0 !important;
+  background: #2a2a2a !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1) !important;
+  margin-bottom: 4px !important;
+}
+
+.flatpickr-current-month {
+  font-size: 16px !important;
+  padding: 4px 0 !important;
+}
+
+.flatpickr-day:hover {
+  background: rgba(0, 255, 255, 0.1) !important;
+  border-color: rgba(0, 255, 255, 0.2) !important;
+}
+
+.flatpickr-day.selected {
+  background: #00ffff !important;
+  color: #1a1a1a !important;
+  border-color: #00ffff !important;
+}
+
+.flatpickr-day.selected:hover {
+  background: #00e6e6 !important;
+}
+
+.flatpickr-day.inRange {
+  background: rgba(0, 255, 255, 0.2) !important;
+  border-color: rgba(0, 255, 255, 0.1) !important;
+}
+
+.flatpickr-day.today {
+  border-color: #00ffff !important;
+}
+
+.flatpickr-day.disabled {
+  color: #666 !important;
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  color: #00ffff !important;
+}
+
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+  fill: #00e6e6 !important;
+}
+
+/* Arrow positioning */
+.flatpickr-calendar:before,
+.flatpickr-calendar:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  pointer-events: none;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-color: transparent;
+}
+
+.flatpickr-calendar:before {
+  top: -8px;
+  border-bottom-color: rgba(0, 255, 255, 0.1);
+}
+
+.flatpickr-calendar:after {
+  top: -7px;
+  border-bottom-color: #1a1a1a;
+}
+
+/* Ensure proper stacking context */
+.console-section {
+  position: relative;
+  z-index: 1;
+}
+
+.console-section:hover {
+  z-index: 2;
+}
+
+/* Date picker input styling */
+.date-picker-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 4px;
+  background: #2a2a2a;
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.date-picker-input:hover,
+.date-picker-input:focus {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  outline: none;
+}
+
+/* Games Section with Slider */
+.games-section {
+  margin-top: 4rem;
+  position: relative;
+  padding: 0 4rem;
+}
+
+.games-section h2 {
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 2rem;
+}
+
+.games-container {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+.games-page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Navigation Buttons */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(26, 26, 26, 0.95);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-nav:hover {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: #00ffff;
+}
+
+.slider-nav svg {
+  width: 24px;
+  height: 24px;
+  color: #00ffff;
+  transition: transform 0.3s ease;
+}
+
+.slider-nav:hover svg {
+  transform: scale(1.2);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Pagination Dots */
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background: #00ffff;
+  transform: scale(1.2);
+}
+
+.pagination-dot:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+/* Category Filter */
+.games-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(26, 26, 26, 0.95);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #00ffff;
+  color: #1a1a1a;
+  border-color: #00ffff;
+}
+
+/* Game Card Styles */
+.game-card {
+  background: rgba(26, 26, 26, 0.95);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+}
+
+.game-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
+
+.game-info {
+  padding: 1rem;
+}
+
+.game-info h4 {
+  color: #00ffff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-info p {
+  color: #f5f5f5;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-info .price {
+  color: #00ffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.game-info .platform {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.rent-game-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(145deg, #00ffff, #00e6e6);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.rent-game-btn:hover {
+  background: linear-gradient(145deg, #00e6e6, #00cccc);
+  transform: translateY(-2px);
+}
+
+/* Calendar popup enhancements */
+.flatpickr-calendar.open {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
